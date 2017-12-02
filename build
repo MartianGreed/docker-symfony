@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+docker-compose -p docker9 build
+
+docker stop $(docker ps -a -q)
+
+docker rm docker9_data_1
+docker rm docker9_mariadb_1
+docker rm docker9_php-fpm_1
+docker rm docker9_composer_1
+docker rm docker9_nginx_1
+
+docker-compose -p docker9 up -d
+
+docker exec -ti docker9_php-fpm_1 zsh

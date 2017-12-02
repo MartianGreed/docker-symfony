@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+docker stop $(docker ps -a -q)
+docker-compose -p docker9 up -d
+docker exec -ti docker9_php-fpm_1 zsh

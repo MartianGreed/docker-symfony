@@ -1,0 +1,8 @@
+app/*
+docker/logs/*
+docker/nginx/app.conf
+!app/.gitkeep
+!app/index.php
+/.idea/
+.project
+*.DS_Store
